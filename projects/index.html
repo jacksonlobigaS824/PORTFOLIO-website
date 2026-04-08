@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Portfolio Jigar Sable</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../assets/css/style (1).css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+    <link id="favicon" rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-png">
+</head>
+
+<body oncontextmenu="return false">
+
+    <!-- Navbar -->
+    <header>
+        <a href="../index.html" class="logo"><i class="fas fa-microchip"></i> Jackson</a>
+        <div id="menu" class="fas fa-bars"></div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="C:\Users\jackson\Downloads\Halloween+Candy+Rankings (1)\github\HOME.html">Home</a></li>
+                <li><a href="../HOME.html#home">Home</a></li>
+                <li><a href="../HOME.html#about">About</a></li>
+                <li><a href="../HOME.html#skills">Skills</a></li>
+                <li><a class="active" href="#">Projects</a></li>
+                <li><a href="../experience/index.html">Experience</a></li>
+                <li><a href="../HOME.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <!-- Projects Section -->
+    <section class="work" id="work">
+        <h2 class="heading"><i class="fas fa-laptop-code"></i> Projects <span>Made</span></h2>
+
+        <div class="projects">
+            <a href="C:\Users\jackson\Downloads\Halloween+Candy+Rankings (1)\github\HOME.html" class="btn projects">
+                <i class="fas fa-arrow-left"></i> back
+            </a>
+        </div>
+
+        <!-- Project Boxes -->
+        <div class="box-container">
+            <div class="box tilt mern">
+                <img src="C:\Users\jackson\Downloads\Halloween+Candy+Rankings (1)\github\assets\images\Screenshot 2026-04-07 044922.png" alt="Smart Parking Project">
+                <div class="content">
+                    <h3>Smart Parking System</h3>
+                    <p>An IoT-based smart parking system for urban management.</p>
+                    <div class="btns">
+                        <a href="#" class="btn" target="_blank"><i class="fas fa-eye"></i> View</a>
+                        <a href="#" class="btn" target="_blank">Code <i class="fas fa-code"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more project boxes here -->
+        </div>
+
+    </section>
+
+    <!-- Scroll Top Button -->
+    <a href="#work" class="fas fa-angle-up" id="scroll-top"></a>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+
+    <!-- Custom Script -->
+    <script>
+        // Smooth scroll only for on-page anchors
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Vanilla Tilt Initialization
+        VanillaTilt.init(document.querySelectorAll(".tilt"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.3
+        });
+
+        // Isotope filtering
+        var $grid = $('.box-container').isotope({
+            itemSelector: '.box',
+            layoutMode: 'fitRows'
+        });
+
+        $('#filters').on('click', 'button', function() {
+            $('#filters button').removeClass('is-checked');
+            $(this).addClass('is-checked');
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({
+                filter: filterValue
+            });
+        });
+    </script>
+
+</body>
+
+</html>
